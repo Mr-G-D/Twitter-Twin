@@ -5,15 +5,16 @@
     <div class="lg:w-32 mb=8">
         @include('sidebar-links')
     </div>
-    <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
+    <div class="lg:flex-1 lg:mx-10" style="max-width: 1000px;">
         @include('tweet-panel')
 
 
         <div class="border border-gray-300 rounded-lg">
-            @include('tweet')
-            @include('tweet')
-            @include('tweet')
-            @include('tweet')
+            @foreach ($tweets as $tweet)
+                @include('tweet')
+            @endforeach
+            
+            
         </div>
     </div>
     <div class="w-1/6 rounded-lg p-4 bg-blue-100">
