@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tweets = tweet::latest()->get();
+        
         return view('home',[
             'tweets'=> auth()->user()->timeline()
         ]);
