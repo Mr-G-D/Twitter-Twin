@@ -25,8 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         
-        return view('home',[
-            'tweets'=> auth()->user()->timeline()
-        ]);
+        $tweets = Tweet::get()->all();
+        return view ('home')->with('tweets',$tweets);
     }
 }

@@ -5,7 +5,7 @@
     <div class="lg:w-32 mb=8">
         @include('sidebar-links')
     </div>
-    <div class="lg:flex-1 lg:mx-10" style="max-width: 1000px;">
+    <div class="lg:flex-1 lg:mx-10 p-2" style="max-width: 1000px;">
         @include('tweet-panel')
 
 
