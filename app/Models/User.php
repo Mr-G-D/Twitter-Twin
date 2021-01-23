@@ -41,13 +41,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatar($user)
+    public function getAvatarAttribute()
     {
-        return('https://i.pravatar.cc/40?u='.$this->email);
+        return "https://i.pravatar.cc/40?u=" . $this->email;
     }
     
     public function timeline()
     {
-        return Tweet::latest()->get();
+        return Tweet::where('user_id', $this->id)->latest()->get();
     }
 }
