@@ -18,7 +18,6 @@ class userSeeder extends Seeder
         $this->command->line('Seeding Users from DeveloperAccess file...');
         $user = User::where('name', 'DINESH')->first();
         if(!$user) {
-            //If you need to add an account for yourself, add it below this.
             $user = new User;
             $user->name = 'DINESH';
             $user->email = 'randaccforme2000@gmail.com';
