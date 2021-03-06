@@ -23,7 +23,7 @@ class HomeController extends Controller
     }
 
     public function tweet(Request $request ){
-        $body = request()->validate(['body' => 'required|max:256']);
+        $body = $request->validate(['body' => 'required|max:256']);
         $tweet = new Tweet;
         $tweet->user_id = Auth::user()->id;
         $tweet->body = $body['body'];

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
     <link rel="icon" href="https://icon-library.com/images/twitter-icon-flat/twitter-icon-flat-12.jpg">
 
     <!-- Scripts -->
@@ -28,7 +28,7 @@
         <section class="px-8 py-4" >
             <header class="container mx-auto">
                 <h1>
-                    <img src="{{asset('images/TT-icon.png')}}" alt="Twitter" width="13%">
+                    <img src="{{asset('/images/TT-icon.png')}}" alt="Twitter" width="13%">
                 </h1>
             </header>
         </section>

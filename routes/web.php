@@ -20,8 +20,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function(){
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// Tweet
-Route::post('/tweet',[HomeController::class,'tweet'])->name('tweet');
+    // Tweet
+    Route::post('/tweet',[HomeController::class,'tweet'])->name('tweet');
 
+});

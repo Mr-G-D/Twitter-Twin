@@ -9,13 +9,11 @@
         @include('tweet-panel')
 
 
-        <div class="border border-gray-300 rounded-lg">
             @foreach ($tweets as $tweet)
                 @include('tweet')
             @endforeach
             
             
-        </div>
     </div>
     <div class="w-1/6 rounded-lg p-4 bg-blue-100">
         @include('friends-list')

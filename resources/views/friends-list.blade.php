@@ -1,12 +1,12 @@
-<h1 class=" text-xl mb-4 font-bold">Connections</h1>
+<h1 class=" text-xl mb-4 font-bold">Following</h1>
 
 <ul>
-    @foreach (range(1,8) as $index)
+    @foreach (Auth::user()->follows as $user)
         <li class="mb-4">
             <div class="flex items-center text-sm">
-                <img class="rounded-full mr-2" src="https://i.pravatar.cc/40" alt="img">
-                John Doe
+                <img class="rounded-full mr-2" src="{{ $user->avatar }}" alt="img">
+                {{ $user->name }}
             </div>
         </li>
     @endforeach
-</ul>
+</ul>   
