@@ -15,7 +15,7 @@
             
             
     </div>
-    <div class="w-1/6 rounded-lg p-4 bg-blue-100">
+    <div class="w-1/6 rounded-lg p-4 bg-blue-100" style="height: fit-content">
         @include('friends-list')
     </div>
 </div>
