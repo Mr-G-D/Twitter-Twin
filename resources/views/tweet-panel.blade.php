@@ -11,6 +11,4 @@
             <button type="submit" class="border-none bg-blue-500 rounded-lg shadow-md hover:shadow-xs p-2 text-white">Tweet</button>
         </footer>
     </form>
-
-    
 </div>

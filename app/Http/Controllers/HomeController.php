@@ -16,7 +16,7 @@ class HomeController extends Controller
     
     public function index()
     {
-        return view ('home',[
+        return view ('tweet.index',[
             'tweets'=> auth()->user()->timeline()
             ]
         );
@@ -29,6 +29,6 @@ class HomeController extends Controller
         $tweet->body = $body['body'];
         $tweet->created_at = now();
         $tweet->save();
-        return redirect('/home');
+        return redirect('/dashboard');
     }
 }

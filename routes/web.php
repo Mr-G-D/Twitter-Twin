@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\profileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
     // Tweet
     Route::post('/tweet',[HomeController::class,'tweet'])->name('tweet');
-
 });
+
+Route::get('/profile/{user}', [profileController::class,'show'])->name('profile');

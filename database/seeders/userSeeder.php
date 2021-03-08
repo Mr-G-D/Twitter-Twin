@@ -20,7 +20,7 @@ class userSeeder extends Seeder
         if(!$user) {
             $user = new User;
             $user->name = 'DINESH';
-            $user->email = 'randaccforme2000@gmail.com';
+            $user->email = 'johndoe@test.com';
             $user->email_verified_at = now();
             $user->password = "$2y$10$6th3s4.RcDwUdTAgyfL9YejGvLsNXalcgQC/NAwQPD72eLc5bXpLe"; //You can use bcrypt() method to encrypt your password. Eg: bcrypt('mypassword');
             $user->save();

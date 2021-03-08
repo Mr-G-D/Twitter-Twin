@@ -25,7 +25,7 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        <section class="px-8 py-4" >
+        <section class="px-5 py-4" >
             <header class="container mx-auto">
                 <h1>
                     <img src="{{asset('/images/TT-icon.png')}}" alt="Twitter" width="13%">
@@ -34,7 +34,17 @@
         </section>
         <section class="px-8">
             <main class="container mx-auto">
-                @yield('content')
+                <div class="lg:flex justify-between">
+    <div class="lg:w-32">
+        @include('sidebar-links')
+    </div>
+    <div class="lg:flex-1 lg:mx-10 p-2" style="max-width: 1000px;">       
+            @yield('content')
+    </div>
+    <div class="w-1/6 rounded-lg p-4 bg-blue-100" style="height: fit-content">
+        @include('friends-list')
+    </div>
+</div>
             </main>
         </section>
         
