@@ -7,7 +7,7 @@
         @enderror
         <hr class="my-4 ">
         <footer class="flex justify-between">
-            <img class="rounded-full mr-2" src="{{ Auth()->user()->avatar }}" alt="img">
+            <img class="rounded-full mr-2" style="width: 40px" src="{{ Auth()->user()->avatar }}" alt="img">
             <button type="submit" class="border-none bg-blue-500 rounded-lg shadow-md hover:shadow-xs p-2 text-white">Tweet</button>
         </footer>
     </form>
