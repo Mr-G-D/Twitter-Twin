@@ -28,7 +28,19 @@ Route::middleware('auth')->group(function(){
     // Tweet
     Route::post('/tweet',[HomeController::class,'tweet'])->name('tweet');
     
-    Route::post('/profile/{user:name}/follow', [followController::class,'store'])->name('profile');
-});
+    //Follow
+    Route::post('/profile/{user:username}/follow', [followController::class,'store'])->name('profile');
 
-Route::get('/profile/{user:name}', [profileController::class,'show'])->name('profile');
+    //View Profile
+    Route::get('/profile/{user:username}', [profileController::class,'show'])->name('profile');
+    
+    //Edit Profile
+    Route::get('/profile/{user:username}/edit', [profileController::class,'editProfile'])->name('edit');
+    Route::patch('/profile/{user:username}', [profileController::class,'updateProfile'])->name('profile');
+
+    //Explore
+    Route::get('/explore', [profileController::class,'explore'])->name('explore');
+
+    //Logout
+    Route::get('/logout', [HomeController::class,'logout'])->name('logout');
+});

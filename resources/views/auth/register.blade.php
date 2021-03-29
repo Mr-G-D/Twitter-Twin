@@ -15,6 +15,21 @@
                     @csrf
 
                     <div class="flex flex-wrap">
+                        <label for="username" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Username') }}:
+                        </label>
+
+                        <input id="username" type="text" class="form-input w-full @error('username')  border-red-500 @enderror"
+                            name="username" value="{{ old('name') }}" required autocomplete="username" autofocus>
+
+                        @error('name')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
+                    <div class="flex flex-wrap">
                         <label for="name" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
                             {{ __('Name') }}:
                         </label>

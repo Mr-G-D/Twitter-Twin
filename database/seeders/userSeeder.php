@@ -19,8 +19,9 @@ class userSeeder extends Seeder
         $user = User::where('name', 'DINESH')->first();
         if(!$user) {
             $user = new User;
+            $user->username = 'tony';
             $user->name = 'DINESH';
-            $user->email = 'johndoe@test.com';
+            $user->email = 'john.doe@test.com';
             $user->email_verified_at = now();
             $user->password = "$2y$10$6th3s4.RcDwUdTAgyfL9YejGvLsNXalcgQC/NAwQPD72eLc5bXpLe"; //You can use bcrypt() method to encrypt your password. Eg: bcrypt('mypassword');
             $user->save();

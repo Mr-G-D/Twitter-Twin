@@ -17,6 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
@@ -57,7 +58,7 @@ class User extends Authenticatable
 
     public function tweets(){
         
-        return $this->hasMany(Tweet::class);
+        return $this->hasMany(Tweet::class)->latest();
     }
 
     public function follows() 
@@ -82,5 +83,11 @@ class User extends Authenticatable
 
     public function following(User $user){
         return $this->follows()->where('following_user_id', $user->id)->exists();
+    }
+
+    public function path($append = ''){
+        $path = route('profile',$this->username);
+
+        return $append? "{$path}/{$append}":"{$path}";
     }
 }
