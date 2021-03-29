@@ -12,7 +12,10 @@ class profileController extends Controller
 {
     public function show(User $user){
         $auth = Auth::user();
-        return view('profiles.show', compact('user','auth'));
+        return view('profiles.show', compact('auth'), [
+            'user' => $user,
+            'tweets' => $user->tweets()->paginate(10)
+        ]);
     }
 
     public function editProfile(User $user){
