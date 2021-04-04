@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 class profileController extends Controller
@@ -14,7 +13,7 @@ class profileController extends Controller
         $auth = Auth::user();
         return view('profiles.show', compact('auth'), [
             'user' => $user,
-            'tweets' => $user->tweets()->paginate(10)
+            'tweets' => $user->tweets()->withLikes()->paginate(10)
         ]);
     }
 
@@ -42,4 +41,5 @@ class profileController extends Controller
 
         return view('explore')->with('user',$user);
     }
+
 }

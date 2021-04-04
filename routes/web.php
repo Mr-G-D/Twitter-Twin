@@ -4,6 +4,7 @@ use App\Http\Controllers\followController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\profileController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function(){
 
     // Tweet
     Route::post('/tweet',[HomeController::class,'tweet'])->name('tweet');
+    Route::post('/tweet/{tweet}/like',[followController::class,'like'])->name('like');
+    Route::post('/tweet/{tweet}/dislike',[followController::class,'dislike'])->name('dislike');
     
     //Follow
     Route::post('/profile/{user:username}/follow', [followController::class,'store'])->name('profile');

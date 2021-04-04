@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset ('js/app.js')}}">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     
+    @yield('css')
+    
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
@@ -49,6 +51,7 @@
         </section>
         
     </div>
+    @yield('js')
+    <script src="http://unpkg.com/turbolinks"></script>
 </body>
-@yield('css')
 </html>
